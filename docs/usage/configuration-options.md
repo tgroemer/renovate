@@ -763,8 +763,8 @@ Configuration added here applies for all Go-related updates, however currently t
 
 For self-hosted users, `GOPROXY`, `GONOPROXY` and `GOPRIVATE` environment variables are supported ([reference](https://golang.org/ref/mod#module-proxy)).
 
-Usage of `direct` will fallback to Renovate-native release fetching mechanism.
-Also we support `off` keyword which immediately will stop any fetching.
+Usage of `direct` will fallback to the Renovate-native release fetching mechanism.
+Also we support the `off` keyword which will stop any fetching immediately.
 
 ## group
 
@@ -1668,7 +1668,7 @@ If enabled Renovate will pin Docker images by means of their SHA256 digest and n
 
 ## platformAutomerge
 
-If you have enabled `automerge` and set `automergeType=pr` in the Renovate config, then you can also set `platformAutomerge` to true to speed up merging via the platform's native automerge functionality.
+If you have enabled `automerge` and set `automergeType=pr` in the Renovate config, then you can also set `platformAutomerge` to `true` to speed up merging via the platform's native automerge functionality.
 
 Renovate tries platform-native automerge only when it initially creates the PR.
 Any PR that is being updated will be automerged with the Renovate-based automerge.
@@ -1677,9 +1677,9 @@ Any PR that is being updated will be automerged with the Renovate-based automerg
 This option is available for Azure, GitHub and GitLab.
 It falls back to Renovate-based automerge if the platform-native automerge is not available.
 
-You can also fine tune the behavior by setting `packageRules` if you want to use it selectively (e.g. per-package).
+You can also fine-tune the behavior by setting `packageRules` if you want to use it selectively (e.g. per-package).
 
-If you rely on Renovate's behavior of rebasing automerging branches when `rebaseWhen=auto`, then note that you are no longer guaranteed of up-to-date branches when automerging if you enable platform automerge, unless you use some type of branch protection rules to achieve the same.
+If you rely on Renovate's behavior of rebasing automerging branches when `rebaseWhen=auto`, then note that you are no longer guaranteed of up-to-date branches when automerging if you enable platform automerge.
 For example, GitHub might automerge a Renovate branch even if it is one or more commits behind the base branch at the time.
 
 ## postUpdateOptions
